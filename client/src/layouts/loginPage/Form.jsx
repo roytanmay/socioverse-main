@@ -65,6 +65,8 @@ const Form = () => {
     }
     formData.append("picturePath", values.picture.name);
 
+    console.log(process.env.REACT_APP_BACKEND_URL);
+
     const savedUserResponse = await fetch(
       // "http://localhost:3001/auth/register",
       `${process.env.REACT_APP_BACKEND_URL}/auth/register`,
