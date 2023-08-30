@@ -5,7 +5,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
 // import MicIcon from "@mui/icons-material/Mic";
 // import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-
+import { notification } from "antd";
 import {
   Box,
   Divider,
@@ -53,6 +53,10 @@ const MyPostWidget = ({ picturePath }) => {
     });
     const posts = await response.json();
 
+    notification["success"]({
+      message: `Post added`,
+      duration: 3,
+    });
     dispatch(setPosts({ posts }));
     setImage(null);
     setPost("");
